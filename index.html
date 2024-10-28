@@ -28,8 +28,9 @@
         <div class="d-flex flex-wrap align-items-center justify-content-md-between p-1">
 
             <!-- burger icon and logo -->
-            <div class="col col-md-auto d-flex align-items-center ">
-                <div><img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_burger_icon_svg.svg" alt="burger menu"></div>
+            <div class="col col-md-auto d-flex align-items-center">
+                <!-- Here we give data-bs-target to show and hide nav bar -->
+                <div><img class="btn m-0 p-0" id="burger-btn" data-bs-toggle="collapse" data-bs-target="#side-bar" href="#side-bar" style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_burger_icon_svg.svg" alt="burger menu"></div>
                 <img class="ms-2" src="assets/images/icons/yt_logo_name_svg.svg" alt="youtube logo on nav bar" width="120">
             </div>
 
@@ -69,7 +70,7 @@
     </div>
 
     <!-- space for side-bar navigation -->
-     <div class="sidebar d-none d-sm-none d-md-block" >
+     <div class="sidebar d-md-block collapse bg-white z-99" id="side-bar">
         <!-- we can use a bootstrap example template and edit it to our req -->
         <ul class="nav nav-pills flex-column mb-auto">
             <!-- Add a hover effect and a active bg color wit rounded borders -->
@@ -409,7 +410,7 @@
                         <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
                         <div class="card-video-details d-flex">
                             <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
-                            <div class="mt-2 ps-3 w-100 ">
+                            <div class="mt-2 ps-3 w-100">
                                 <h4 class="video-title mb-0">Some catchy video Name</h4>
                                 <div class=" channel-name">Channel Name</div>
                                 <div class=" video-views">10M Views &bull; 3 Months ago</div>
