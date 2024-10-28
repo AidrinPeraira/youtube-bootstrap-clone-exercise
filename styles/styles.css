@@ -1,0 +1,113 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Always do this to keep things consitent across all browsers */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+a{
+    display: block;
+    text-decoration: none;
+}
+
+.navigation-bar{
+    z-index: 99;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.sidebar{
+    width: 250px;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 50px;
+    overflow-y: auto;
+    padding-top: 20px;
+    padding-bottom: 40px;
+
+}
+
+.sidebar .nav-link span{
+    padding: 0 15px;
+    vertical-align: bottom;
+    white-space: nowrap;
+    font-size: 15px;
+}
+
+.page-content{
+    margin-left: 250px;
+    position: relative;
+    top: 90px;
+}
+
+@media screen and (max-width: 768px) {
+    .page-content{
+        margin-left: 0px;
+        position: relative;
+        top: 90px;
+    }
+}
+
+
+.nav-footer{
+    padding-right: 20px;
+    padding-left: 1rem;
+}
+
+.nav-footer .nav-link{
+    padding: 0;
+    padding-right: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Styling for the scrolling chips */
+
+.chip-container{
+    background-color: white;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 10px 15px;
+    z-index: 99;
+    position: fixed;
+    top:49px;
+}
+
+.chip-container .chip{
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    margin-right: 5px;
+    border-radius: 25px;
+}
+
+.chip.active{
+    background-color: black;
+    color: white;
+}
+
+/* Styling for video detail elements */
+
+.video-title{
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+.channel-name,
+.video-views{
+    font-size: 13px;
+    color: gray;
+}

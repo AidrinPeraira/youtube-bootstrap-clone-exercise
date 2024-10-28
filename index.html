@@ -13,14 +13,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Slick Library to make a scroll bar for recomended searches (just to make it easy for us)-->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
     <!-- custom css sheet for slight modifications if necesary -->
-     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- CSS for scsroll bar library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
 </head>
 <body>
     
     <!-- space for nav bar -->
-    <div class="container-fluid">
+    <div class="container-fluid navigation-bar bg-white">
         
         <div class="d-flex flex-wrap align-items-center justify-content-md-between p-1">
 
@@ -31,7 +34,7 @@
             </div>
 
             <!-- search bar and search icon -->
-            <div class="col col-md-6 d-none d-md-flex align-center justify-content-centerr">
+            <div class="col col-md-6 d-none d-md-flex align-center justify-content-center">
                 <!-- d-none makes the element non existent and d-md-flex makes if a flex  container on bigger screens. Esentialy it disappeaers when screen is small -->
 
                 <!-- bootstrap content edited -->
@@ -66,49 +69,697 @@
     </div>
 
     <!-- space for side-bar navigation -->
-     <div class="sidebar">
+     <div class="sidebar d-none d-sm-none d-md-block" >
+        <!-- we can use a bootstrap example template and edit it to our req -->
         <ul class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item">
-                <a href="#" class="nav-link active" aria-current="page">
-                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-                Home
+            <!-- Add a hover effect and a active bg color wit rounded borders -->
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_home_icon_svg.svg" alt="Home Icon">
+                <span class="fw-bold">Home</span>
                 </a>
             </li>
-            <li>
-                <a href="#" class="nav-link link-body-emphasis">
-                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-                Dashboard
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_shorts_icon_svg.svg" alt="Shorts Icon">
+                <span>Shorts</span>
                 </a>
             </li>
-            <li>
-                <a href="#" class="nav-link link-body-emphasis">
-                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-                Orders
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link link-body-emphasis">
-                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-                Products
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link link-body-emphasis">
-                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-                Customers
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_subscriptions_icon_svg.svg" alt=" Icon">
+                <span>Subscriptions</span>
                 </a>
             </li>
         </ul>
+        
+        <ul class="nav nav-pills flex-column mb-auto">
+            <hr class="w-70">
+            <p class="h-2 fw-bold px-3">You <img src="/assets/images/icons/yt_right_arrow_icon_svg.svg" alt="icon" width="15px"> </p>
+
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_history_icon_svg.svg" alt="History Icon">
+                <span>History</span>
+                </a>
+            </li>            
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_playlist_icon_svg.svg" alt=" Icon">
+                <span>Playlists</span>
+                </a>
+            </li>
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_videos_icon_svg.svg" alt=" Icon">
+                <span>Your videos</span>
+                </a>
+            </li>
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_courses_bulb_icon_svg.svg" alt=" Icon">
+                <span>Your courses</span>
+                </a>
+            </li>
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_podcast_icon_svg.svg" alt=" Icon">
+                <span>Your podcasts</span>
+                </a>
+            </li>
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_watch_later_clock_icon_svg.svg" alt=" Icon">
+                <span>Watch Later</span>
+                </a>
+            </li>
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_like_thumb_icon_svg.svg" alt=" Icon">
+                <span>Liked videos</span>
+                </a>
+            </li>
+        </ul>
+        
+        <!-- add expand functionality here -->
+        <ul class="nav nav-pills flex-column mb-auto">
+            <hr class="w-70">
+            <p class="h-2 fw-bold px-3">Subscriptions</p>
+            <!-- channel icons -->
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img class="rounded-circle" style="height: 24px; flex-shrink: 0;" src="assets/images/images/meditation-vacation-profile.jpg" alt=" Icon">
+                <span>Peace Daily</span>
+                </a>
+            </li>
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img class="rounded-circle" style="height: 24px; flex-shrink: 0;" src="assets/images/images/nat-geo-prfile.jpg" alt=" Icon">
+                <span>Nat-Geo</span>
+                </a>
+            </li>
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img class="rounded-circle" style="height: 24px; flex-shrink: 0;" src="assets/images/images/nasa-profile.jpg" alt=" Icon">
+                <span>NASA</span>
+                </a>
+            </li>
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img class="rounded-circle" style="height: 24px; flex-shrink: 0;" src="assets/images/images/omeleto-profile.jpg" alt=" Icon">
+                <span>Omeleto</span>
+                </a>
+            </li>
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img class="rounded-circle" style="height: 24px; flex-shrink: 0;" src="assets/images/images/sony-music-profile.jpg" alt=" Icon">
+                <span>Sony Music India</span>
+                </a>
+            </li>
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_down_arrow_icon_svg.svg" alt=" Icon">
+                <span>Show more</span>
+                </a>
+            </li>
+        </ul>
+        
+        <ul class="nav nav-pills flex-column mb-auto">
+            <hr class="w-70">
+            <p class="h-2 fw-bold px-3">Explore</p>
+            
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_trending_flame_icon_svg.svg" alt=" Icon">
+                <span>Trending</span>
+                </a>
+            </li>
+
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_shopping_bag_icon_svg.svg" alt=" Icon">
+                <span>Shopping</span>
+                </a>
+            </li>
+            
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_music_icon_svg.svg" alt=" Icon">
+                <span>Music</span>
+                </a>
+            </li>
+    
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_movies_icon_svg.svg" alt=" Icon">
+                <span>Films</span>
+                </a>
+            </li>
+
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_live_icon_svg.svg" alt=" Icon">
+                <span>Live</span>
+                </a>
+            </li>
+
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_gaming_icon_svg.svg" alt=" Icon">
+                <span>Gaming</span>
+                </a>
+            </li>
+
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_news_icon_svg.svg" alt=" Icon">
+                <span>News</span>
+                </a>
+            </li>
+
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_sports_trophy_icon.svg" alt=" Icon">
+                <span>Sport</span>
+                </a>
+            </li>
+            
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_courses_bulb_icon_svg.svg" alt=" Icon">
+                <span>Courses</span>
+                </a>
+            </li>
+
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_fashion_hanger_icon_svg.svg" alt=" Icon">
+                <span>Fashion % beauty</span>
+                </a>
+            </li>
+
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_podcast_icon_svg.svg" alt=" Icon">
+                <span>Podcasts</span>
+                </a>
+            </li>
+        </ul>
+        
+        <ul class="nav nav-pills flex-column mb-auto">
+            <hr class="w-70">
+            <p class="h-2 fw-bold px-3">More from YouTube</p>
+            <!-- add list items premium studio music kids -->
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_logo_red_svg.svg" alt=" Icon">
+                <span>Youtube Premium</span>
+                </a>
+            </li>
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_studio_logo_red_svg.svg" alt=" Icon">
+                <span>Youtube Studio</span>
+                </a>
+            </li>
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_music_logo_red_svg.svg" alt=" Icon">
+                <span>Youtube Music</span>
+                </a>
+            </li>
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_kids_logo_red_svg.svg" alt=" Icon">
+                <span>Youtube Kids</span>
+                </a>
+            </li>
+
+        </ul>
+        
+        <ul class="nav nav-pills flex-column mb-auto">
+            <hr class="w-70">
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_settings_icon_svg.svg" alt=" Icon">
+                <span>Settings</span>
+                </a>
+            </li>
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_report_flag_icon_svg.svg" alt=" Icon">
+                <span>Report history</span>
+                </a>
+            </li>
+
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_help_icon_svg.svg" alt=" Icon">
+                <span>Help</span>
+                </a>
+            </li>
+
+            <li class="nav-item d-flex align-content-center">
+                <a href="#" class="nav-link text-dark" aria-current="page">
+                <img style="height: 24px; flex-shrink: 0;" src="assets/images/icons/yt_feedback_message_icon_svg.svg" alt=" Icon">
+                <span>Send feedback</span>
+                </a>
+            </li>
+        </ul>
+        <!-- add quick links at bottom of nav bar -->
+         <ul class="nav nav-footer md-3 pt-3">
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark">Press</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark">Copyright</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark">Contact us</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark">Creator</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark">Advertise</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark">Developers</a>
+            </li>
+         </ul>
+         <ul class="nav nav-footer md-3 pt-3">
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark">Terms</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark">Privacy</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark">Policy & Safety</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark">How YouTube works</a>
+            </li>
+            <li class="nav-item p ">
+                <a href="#" class="nav-link text-dark">Test new features</a>
+            </li>
+         </ul>
+         <p class="px-3 pt-3" style="font-size: 12px;">© 2024 Google LLC</p>
      </div>
 
-
-
     <!-- space for content -->
+     <div class="page-content">
+
+        <!-- Slick Carousel Not working Find out and fix need to add arrows -->
+        <!-- small scrolling chips for suggestions on  top of content -->
+        <div class="chip-container d-flex align-items-center">
+            <div class="chip active">All</div>
+            <div class="chip">Javascript</div>
+            <div class="chip">Computer Science</div>            
+            <div class="chip">Space X</div>
+            <div class="chip">Motorcycles</div>
+            <div class="chip">Motivation</div>
+            <div class="chip">Movie Recap</div>
+            <div class="chip">MMA</div>
+            <div class="chip">HTML</div>
+            <div class="chip">Javascript</div>
+            <div class="chip">CSS</div>
+            <div class="chip">Brototype</div>
+            <div class="chip">Success</div>
+            <div class="chip">Marketting</div>
+            <div class="chip">Sales Talk</div>
+            <div class="chip">Finance</div>
+            <div class="chip">TED</div>
+            <div class="chip">Travel</div>
+            <div class="chip">Discovery</div>
+            <div class="chip">History TV</div>
+            <div class="chip">Man vs Wild</div>
+        </div>
+
+        <!-- video cards -->
+        <div class="container-fluid p-5 py-3">
+
+            <div class="row">
+                <!-- each video -->
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <a href="#" class="card card-video border-0 bg-transparent mb-4">
+                        <img class="rounded-3" src="assets/images/tumbnails/1-1.jpg" alt="video thumbnail">
+                        <div class="card-video-details d-flex">
+                            <img class="rounded-circle mt-2" src="assets/images/tumbnails/1-2.jpg" width="30px" height="30px" alt="channel profile pic">
+                            <div class="mt-2 ps-3 w-100 ">
+                                <h4 class="video-title mb-0">Some catchy video Name</h4>
+                                <div class=" channel-name">Channel Name</div>
+                                <div class=" video-views">10M Views &bull; 3 Months ago</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+     </div>
 
     <!-- Here we will add any javascript links -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <!-- we don't need jquery for bootstrap elements that we are going to use. but the slick library needs it-->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <!-- The bootstrap scroll bar is not like the one in outube. Modify it using the following library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
+    <!-- custom js file link -->
+     <script src="scripts/main.js"></script>
 </body>
 </html>
